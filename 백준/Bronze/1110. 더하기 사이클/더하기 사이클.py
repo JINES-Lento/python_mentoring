@@ -8,7 +8,7 @@ def make_new_num(N, N_len):
     new_num = 0
     for i in range(N_len - 1):
         new_num += N // (10 ** (i+1))
-        new_num += N % (10 ** (i+1))
+    new_num += N % 10
     
     if (flag):
         new_num = (new_num % 10 ** (N_len -1)) + (((N // 10 ** (N_len -1))) * (10 ** (N_len -1)))
