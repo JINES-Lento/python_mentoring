@@ -1,0 +1,55 @@
+/*
+1
+
+1 1
+2
+
+1 1 1
+1 2
+2 1
+3
+
+1 + (1 1 1)
+1 + (1 2)
+1 + (2 1)
+1 + (3)
+2 + (1 1)
+2 + (2)
+3 + (1)
+
+전거 + 전전거 + 전전전거
+*/
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int dp[1000001];
+
+int main()
+{
+    ios_base :: sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+
+    int n, t;
+
+   dp[1] = 1;
+   dp[2] = 2;
+   dp[3] = 4;
+
+   for(int i = 4; i <= 11; ++i){
+        dp[i] = dp[i-1] + dp[i-2] + dp[i-3];
+   }
+
+   cin >> t;
+   for (int i = 0; i < t; ++i){
+        cin >> n;
+        cout << dp[n] << '\n';
+   }
+
+
+
+
+    return 0;
+}
